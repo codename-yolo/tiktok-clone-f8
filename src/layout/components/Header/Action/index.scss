@@ -1,0 +1,14 @@
+.wrapper-action-header {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+        position: relative;
+        margin-left: 24px;
+        width: 32px;
+        height: 32px;
+        background-size: cover;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
