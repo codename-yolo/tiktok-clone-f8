@@ -4,6 +4,7 @@
     .main {
         display: flex;
         justify-content: center;
+        margin-top: $default-layout-header-height;
         .wrapper {
             display: flex;
             justify-content: center;

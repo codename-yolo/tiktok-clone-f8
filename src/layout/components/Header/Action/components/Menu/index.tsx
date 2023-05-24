@@ -9,7 +9,7 @@ import { MenuType } from './type.ts';
 
 import './index.scss';
 
-import icons from '~/assets';
+import { icons } from '~/assets';
 
 const { ArrowBackIcon } = icons;
 
@@ -28,7 +28,7 @@ const Menu: FC<MenuProps> = (props) => {
     }, [history]);
 
     const renderMenu = useMemo(() => {
-        const menu = currentMenu.menu.map(({ id, key, name, icon, action = '', children }) => {
+        const menu = currentMenu.menu.map(({ id, key, name, icon, action = '', cls, children }) => {
             return (
                 <MenuItem
                     key={id}
@@ -44,6 +44,7 @@ const Menu: FC<MenuProps> = (props) => {
                             handleClickItemMenu(action);
                         }
                     }}
+                    cls={cls}
                 />
             );
         });
@@ -84,7 +85,7 @@ const Menu: FC<MenuProps> = (props) => {
         }
     };
 
-    const handleHideTippy = () => {
+    const handleResetToFirstPage = () => {
         setHistory((prev) => prev.slice(0, 1));
     };
 
@@ -96,14 +97,14 @@ const Menu: FC<MenuProps> = (props) => {
                 <Wrapper cls="wrapper-menu">
                     {size(history) > 1 && (
                         <header>
-                            <ArrowBackIcon onClick={handleBackHistory} />
+                            <ArrowBackIcon className="btn-back" onClick={handleBackHistory} />
                             <span className="title">{currentMenu?.title}</span>
                         </header>
                     )}
-                    {renderMenu}
+                    <div className="wrapper-render-menu">{renderMenu}</div>
                 </Wrapper>
             }
-            onHide={handleHideTippy}
+            onHide={handleResetToFirstPage}
         >
             {children}
         </Tippy>

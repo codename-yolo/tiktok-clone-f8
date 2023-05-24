@@ -13,7 +13,6 @@
     background-color: $default-layout-header-search-bg-color;
 
     .input-search {
-        position: relative;
         width: $default-layout-header-search-input-width;
         padding: 0;
         border: none;
@@ -45,14 +44,26 @@
         @include color-rgba-default-layout-header(background, 0.12);
     }
 
-    .clear-btn {
-        border: none;
-    }
-
-    .loading,
-    .clear-btn {
-        padding: 0;
+    .custom-wrapper-btn {
+        width: 16px;
+        height: 16px;
         margin: 0 12px;
+        .btn-clear {
+            &:hover {
+                cursor: pointer;
+            }
+            border: none;
+        }
+
+        .loading {
+            animation: spin-loading 1s linear infinite;
+        }
+
+        .loading,
+        .btn-clear {
+            display: block;
+            padding: 0;
+        }
     }
 
     .search-btn {
@@ -73,6 +84,15 @@
             .icon {
                 @include color-rgba-default-layout-header(color, 1);
             }
+        }
+    }
+
+    @keyframes spin-loading {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
         }
     }
 }
@@ -103,4 +123,8 @@
 
 .custom-tooltip {
     background-color: red;
+}
+
+.custom-tippy-search-header {
+    max-height: min((100vh - 96px) - 60px, 734px);
 }

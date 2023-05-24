@@ -7,6 +7,7 @@
         svg {
             margin-left: 28px;
         }
+
         .title {
             font-weight: 600;
             font-size: 16px;
@@ -15,5 +16,14 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
+        .btn-back:hover {
+            cursor: pointer;
+        }
+    }
+
+    .wrapper-render-menu {
+        overflow-y: auto;
+        max-height: 590px;
     }
 }

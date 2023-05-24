@@ -5,7 +5,17 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), svgr()],
+  plugins: [
+    react(),
+    svgr(),
+  ],
+
+  css: {
+    modules: {
+      scopeBehaviour: "global",
+      generateScopedName: 'custom__[hash:base64:5]',
+    },
+  },
   resolve: {
     alias: {
       '~': path.resolve(__dirname, 'src'),

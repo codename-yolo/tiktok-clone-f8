@@ -1,3 +1,5 @@
+@import '~/GlobalStyle/_mixins.scss';
+
 .wrapper-action-header {
     display: flex;
     align-items: center;
@@ -10,5 +12,9 @@
         background-size: cover;
         border-radius: 50%;
         cursor: pointer;
+    }
+
+    .border-top {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
     }
 }

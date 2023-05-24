@@ -7,6 +7,7 @@ interface WrapperProps {
 
 const Wrapper: FC<WrapperProps> = (props) => {
     const { children, cls = '' } = props;
+
     return <div className={cls}>{children}</div>;
 };
 

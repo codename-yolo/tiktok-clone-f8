@@ -68,6 +68,6 @@ const Button: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props, ref
     );
 };
 
-const Enh = forwardRef(Button);
+const ForwardRefButton = forwardRef(Button);
 
-export default Enh;
+export default ForwardRefButton;

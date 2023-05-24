@@ -6,5 +6,6 @@ export interface MenuType {
     icon: React.ReactNode | string;
     children?: MenuType[];
     action?: string;
+    cls?: string;
 }
 

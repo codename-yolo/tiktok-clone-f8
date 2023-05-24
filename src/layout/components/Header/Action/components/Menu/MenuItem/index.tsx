@@ -8,13 +8,14 @@ interface MenuItemProps {
     icon: React.ReactNode;
     action?: any;
     onClick?: () => void;
+    cls?: string;
 }
 
 const MenuItem: FC<MenuItemProps> = (props) => {
-    const { name, icon, action, onClick, keyName } = props;
+    const { name, icon, cls, action, onClick, keyName } = props;
 
     return (
-        <div className="wrapper-menu-item" onClick={onClick}>
+        <div className={`wrapper-menu-item ${cls}`} onClick={onClick}>
             <div className="title">
                 {icon} <span className={`${keyName === 'c-l' ? 'children' : ''}`}>{name}</span>
             </div>
