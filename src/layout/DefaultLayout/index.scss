@@ -1,0 +1,18 @@
+@import '~/GlobalStyle/_global.scss';
+
+.wrapper-default-layout {
+    .main {
+        display: flex;
+        justify-content: center;
+        margin-top: $default-layout-header-height;
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            width: $default-layout-width;
+            min-height: 1000px;
+            .content {
+                flex: 1;
+            }
+        }
+    }
+}

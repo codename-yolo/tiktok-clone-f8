@@ -1,15 +1,37 @@
 import React, { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-interface HeaderProps {
-    children?: React.ReactNode;
-}
+import Search from './Search';
+import Action from './Action';
 
-const Header: FC<HeaderProps> = (props) => {
-    const { children } = props;
+import icons from '~/assets';
 
-    console.log(children);
+const { TikTokIcon } = icons;
 
-    return <div>Header</div>;
+import './index.scss';
+
+const Header: FC = () => {
+    const navigate = useNavigate();
+
+    const handleBackToHome = () => {
+        navigate('/');
+    };
+
+    return (
+        <header className="wrapper-header">
+            <div className="inner">
+                <div className="logo">
+                    <TikTokIcon onClick={handleBackToHome} />
+                </div>
+                <div className="search">
+                    <Search />
+                </div>
+                <div className="action">
+                    <Action />
+                </div>
+            </div>
+        </header>
+    );
 };
 
 export default Header;

@@ -2,9 +2,9 @@ import { UploadLayout } from '../layout';
 
 import Home from '@pages/Home';
 import Following from '@pages/Following';
-import NotFound from '@pages/NotFound';
 import Upload from '@pages/Upload';
 import Profile from '@pages/Profile';
+import NotFound from '@pages/NotFound';
 
 export const privateRouters = [
     {
@@ -31,6 +31,7 @@ export const privateRouters = [
     {
         path: '*',
         element: NotFound,
+        noLayout: true,
     },
 ];
 

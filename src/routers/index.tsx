@@ -1,23 +1,23 @@
 import { useRoutes } from 'react-router-dom';
 
-import { privateRouters } from './const';
 import { DefaultLayout } from '../layout';
+
+import { privateRouters } from './const';
 
 const Routers = () => {
     const element = useRoutes(
-        privateRouters.map(({ layout, ...item }) => {
-            const Layout = layout || DefaultLayout;
-            const Element = item.element;
-
-            return {
+        privateRouters.map(
+            ({ layout: Layout = DefaultLayout, element: Element, noLayout, ...item }) => ({
                 ...item,
-                element: (
+                element: noLayout ? (
+                    <Element />
+                ) : (
                     <Layout>
-                        <Element />
+                        <Element></Element>
                     </Layout>
                 ),
-            };
-        }),
+            }),
+        ),
     );
 
     return element;

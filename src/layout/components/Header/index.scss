@@ -1,0 +1,35 @@
+@import '~/GlobalStyle/_global.scss';
+
+.wrapper-header {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: $default-layout-header-height;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    background: $white-color-rgba;
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: $default-layout-width;
+        height: 100%;
+        .logo {
+        }
+
+        .search {
+            padding: 0 8px;
+            min-width: 300px;
+        }
+
+        .action {
+        }
+
+        svg {
+            display: block;
+        }
+    }
+}
