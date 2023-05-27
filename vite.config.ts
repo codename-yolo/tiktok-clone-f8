@@ -9,11 +9,9 @@ export default defineConfig({
     react(),
     svgr(),
   ],
-
   css: {
     modules: {
-      scopeBehaviour: "global",
-      generateScopedName: 'custom__[hash:base64:5]',
+      generateScopedName: '[local]__[hash:base64:5]',
     },
   },
   resolve: {

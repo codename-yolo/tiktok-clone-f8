@@ -4,6 +4,7 @@
 .btn-common {
     display: flex;
     align-items: center;
+    justify-content: center;
     min-height: 36px;
     border-radius: 4px;
     border: none;
@@ -17,6 +18,10 @@
 
     .icon {
         line-height: 100%;
+    }
+
+    .children {
+        width: 100%;
     }
 
     + .btn-common:not(:first-child) {

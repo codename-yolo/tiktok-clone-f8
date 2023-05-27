@@ -12,7 +12,7 @@ import callApi from '~/services';
 
 import { AccountType } from './type';
 
-import './index.scss';
+import styled from './index.module.scss';
 
 const defaultSearchResult = [
     {
@@ -55,13 +55,13 @@ const Search: FC = () => {
     };
 
     useEffect(() => {
-        console.log('ef');
+        // console.log('ef');
 
         getAccount();
-    }, [searchValueDebounce, getAccount]);
+    }, [searchValueDebounce]);
 
     useEffect(() => {
-        console.log('ef2');
+        // console.log('ef2');
 
         if (!searchValue) {
             setSearchResult(defaultSearchResult);
@@ -96,43 +96,45 @@ const Search: FC = () => {
             onClickOutside={handleHiddenSearchResult}
             dataComponent={<AccountList data={searchResult} />}
             containerEle={containerRef.current}
-            clsContainer="custom-tippy-search-header"
+            clsContainer={styled['custom-tippy-search-header']}
         >
-            <div className="wrapper-search-header" ref={containerRef}>
+            <div className={styled['wrapper-search-header']} ref={containerRef}>
                 <input
                     ref={inputSearchRef}
                     value={searchValue}
                     onChange={handleChangeInputSearch}
                     onFocus={handleShowSearchResult}
                     type="text"
-                    className="input-search"
+                    className={styled['input-search']}
                     placeholder="Search account and videos"
                     spellCheck={false}
                     autoComplete="off"
                 />
-                <div className="custom-wrapper-btn">
+                <div className={styled['custom-wrapper-btn']}>
                     {searchValue && !isLoading && (
                         <FontAwesomeIcon
-                            className={`btn-clear`}
+                            className={styled['btn-clear']}
                             icon={faCircleXmark}
                             onClick={handleClearInputSearch}
                         />
                     )}
 
-                    {isLoading && <FontAwesomeIcon className="loading" icon={faSpinner} />}
+                    {isLoading && (
+                        <FontAwesomeIcon className={styled['loading']} icon={faSpinner} />
+                    )}
                 </div>
 
-                <span className="line" />
+                <span className={styled['line']} />
 
-                <button className="search-btn">
+                <button className={styled['search-btn']}>
                     <FontAwesomeIcon
-                        className="icon"
+                        className={styled['icon']}
                         icon={faMagnifyingGlass}
                         onClick={getAccount}
                     />
                 </button>
 
-                <div className="border-div" />
+                <div className={styled['border-div']} />
             </div>
         </TippyComponent>
     );

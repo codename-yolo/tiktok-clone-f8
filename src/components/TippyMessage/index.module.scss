@@ -1,12 +1,13 @@
-.wrapper-tippy-message {
+:local(.wrapper-tippy-message) {
     position: relative;
     background-color: rgba(84, 84, 84, 0.92) !important;
     color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
     border-radius: 8px;
     min-height: max-content;
-
-    .tippy-arrow {
-        color: rgba(84, 84, 84, 0.92);
+    :global {
+        .tippy-arrow {
+            color: rgba(84, 84, 84, 0.92);
+        }
     }
 }

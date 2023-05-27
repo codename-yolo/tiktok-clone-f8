@@ -5,13 +5,13 @@ import Menu from './components/Menu';
 import Divider from '~/components/Divider';
 import TippyMessage from '~/components/TippyMessage';
 import WrapperForwardRef from '~/components/WrapperForwardRef';
+import Image from '~/components/Image';
 
 import { MenuType } from './components/Menu/type';
 
-import './index.scss';
+import styled from './index.module.scss';
 
 import { icons } from '~/assets';
-import Image from '~/components/Image';
 
 const {
     MoreIcon,
@@ -104,7 +104,7 @@ const menuLogged: MenuType[] = [
         name: 'Logout',
         action: 'to',
         icon: <LogOutIcon />,
-        cls: 'border-top',
+        cls: styled['border-top'],
     },
 ];
 
@@ -116,7 +116,7 @@ const Action: FC = () => {
     }, [isLogged]);
 
     return (
-        <div className="wrapper-action-header">
+        <div className={styled['wrapper-action-header']}>
             {isLogged ? (
                 <>
                     <Divider orientation="right" size={20}>
@@ -148,7 +148,7 @@ const Action: FC = () => {
             <Menu menuFirst={menuByLogged}>
                 {isLogged ? (
                     <Image
-                        cls="avatar"
+                        cls={styled['avatar']}
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTbJ6q6nCvC-F8ctwjE8F_gh176HK1p-EcKg&usqp=CAU"
                         alt="avatar"
                         fallback="https://cdn.dribbble.com/users/27766/screenshots/3488007/media/30313b019754da503ec0860771a5536b.png?compress=1&resize=400x300"

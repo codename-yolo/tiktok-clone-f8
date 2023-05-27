@@ -6,9 +6,9 @@ import Action from './Action';
 
 import icons from '~/assets';
 
-const { TikTokIcon } = icons;
+import styled from './index.module.scss';
 
-import './index.scss';
+const { TikTokIcon } = icons;
 
 const Header: FC = () => {
     const navigate = useNavigate();
@@ -18,15 +18,15 @@ const Header: FC = () => {
     };
 
     return (
-        <header className="wrapper-header">
-            <div className="inner">
-                <div className="logo">
+        <header className={styled['wrapper-header']}>
+            <div className={styled['inner']}>
+                <div className={styled['logo']}>
                     <TikTokIcon onClick={handleBackToHome} />
                 </div>
-                <div className="search">
+                <div className={styled['search']}>
                     <Search />
                 </div>
-                <div className="action">
+                <div className={styled['action']}>
                     <Action />
                 </div>
             </div>

@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import Tippy from '@tippyjs/react';
 
-import './index.scss';
 import TippyBox from './components/TippyBox';
+
+import styled from './index.module.scss';
 
 interface TippyMessageProps {
     message: string;
@@ -38,7 +39,7 @@ const TippyMessage: FC<TippyMessageProps> = (props) => {
         <Tippy
             {...propsTrigger}
             {...passProps}
-            className="wrapper-tippy-message"
+            className={styled['wrapper-tippy-message']}
             arrow={arrow}
             onClickOutside={handleHiddenTippy}
             delay={delay}

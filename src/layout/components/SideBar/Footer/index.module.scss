@@ -1,0 +1,36 @@
+@import '~/GlobalStyle/_mixins.scss';
+
+:local(.wrapper-footer-side-bar) {
+    position: relative;
+    padding-top: 16px;
+    padding-left: 8px;
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+        span {
+            display: inline-block;
+            margin: 6px 5px 0 0;
+            color: #16182380;
+            font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 17px;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        height: 1px;
+        @include color-rgba-default-layout-header(background, 0.12);
+        transform: scaleY(0.5);
+    }
+}

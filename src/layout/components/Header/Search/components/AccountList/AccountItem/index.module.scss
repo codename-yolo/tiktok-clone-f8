@@ -1,6 +1,6 @@
 @import '~/GlobalStyle/_mixins.scss';
 
-.wrapper-account-item {
+:local(.wrapper-account-item) {
     display: flex;
     padding: 9px 16px;
     cursor: pointer;

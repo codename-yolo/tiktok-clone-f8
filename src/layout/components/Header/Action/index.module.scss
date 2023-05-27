@@ -1,6 +1,6 @@
 @import '~/GlobalStyle/_mixins.scss';
 
-.wrapper-action-header {
+:local(.wrapper-action-header) {
     display: flex;
     align-items: center;
 

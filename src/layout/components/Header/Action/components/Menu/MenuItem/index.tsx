@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import './index.scss';
+import styled from './index.module.scss';
 
 interface MenuItemProps {
     keyName: string;
@@ -15,11 +15,12 @@ const MenuItem: FC<MenuItemProps> = (props) => {
     const { name, icon, cls, action, onClick, keyName } = props;
 
     return (
-        <div className={`wrapper-menu-item ${cls}`} onClick={onClick}>
-            <div className="title">
-                {icon} <span className={`${keyName === 'c-l' ? 'children' : ''}`}>{name}</span>
+        <div className={`${styled['wrapper-menu-item']} ${cls ? cls : ''}`} onClick={onClick}>
+            <div className={styled['title']}>
+                {icon}{' '}
+                <span className={`${keyName === 'c-l' ? styled['children'] : ''}`}>{name}</span>
             </div>
-            {action && <div className="action">{action}</div>}
+            {action && <div className={styled['action']}>{action}</div>}
         </div>
     );
 };

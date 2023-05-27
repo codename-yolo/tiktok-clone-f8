@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react';
 
-import './index.scss';
+import styled from './index.module.scss';
 
 interface DividerProps {
     children?: React.ReactNode;
@@ -26,9 +26,12 @@ const Divider: FC<DividerProps> = (props) => {
     }, [children, orientation]);
 
     return (
-        <div className={`wrapper-divider-common ${cls}`}>
+        <div className={`${styled['wrapper-divider-common']} ${cls ? cls : ''}`}>
             {React.Children.map(children, (child, idx) => (
-                <div className="child" style={idx != conditionByOrientation ? styles : {}}>
+                <div
+                    className={styled['child']}
+                    style={idx != conditionByOrientation ? styles : {}}
+                >
                     {child}
                 </div>
             ))}

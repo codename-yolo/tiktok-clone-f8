@@ -1,0 +1,26 @@
+@import '~/GlobalStyle/_mixins.scss';
+@import '~/GlobalStyle/_global.scss';
+
+:local(.wrapper-suggest-account) {
+    padding: 16px 0;
+    border-top: 0.5px solid rgba(22, 24, 35, 0.12);
+    .title {
+        font-size: 14px;
+        line-height: 20px;
+        @include color-rgba-default-layout-header(color, 0.75);
+        font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+        margin-inline: 10px 16px;
+        font-weight: 600;
+    }
+    .btn-see-more {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-inline-start: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        color: $pink-color-rbg;
+        font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

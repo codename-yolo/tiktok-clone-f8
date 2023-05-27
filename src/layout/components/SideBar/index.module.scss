@@ -1,0 +1,8 @@
+@import '~/GlobalStyle/_global.scss';
+
+:local(.wrapper-side-bar) {
+    // width: $side-bar-width;
+    .container {
+        width: 240px;
+    }
+}

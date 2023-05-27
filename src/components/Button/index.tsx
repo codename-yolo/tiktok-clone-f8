@@ -2,7 +2,8 @@ import React, { forwardRef } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import './index.scss';
+import styled from './index.module.scss';
+import { handleStyledCss } from '~/utils';
 
 interface ButtonProps {
     size: 'large' | 'medium' | 'small';
@@ -58,12 +59,15 @@ const Button: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props, ref
     return (
         <ButtonType
             ref={ref}
-            className={`btn-common ${cls} btn-${type} ${size} ${disable ? 'disable' : ''}`}
+            className={`${handleStyledCss(
+                `btn-common btn-${type} ${size} ${disable ? 'disable' : ''}`,
+                styled,
+            )} ${cls}`}
             {...customProps}
         >
-            {leftIcon && <span className="icon">{leftIcon}</span>}
-            <span className="children">{children}</span>
-            {rightIcon && <span className="icon">{rightIcon}</span>}
+            {leftIcon && <span className={styled['icon']}>{leftIcon}</span>}
+            <span className={styled['children']}>{children}</span>
+            {rightIcon && <span className={styled['icon']}>{rightIcon}</span>}
         </ButtonType>
     );
 };
