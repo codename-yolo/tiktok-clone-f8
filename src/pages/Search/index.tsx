@@ -1,14 +1,21 @@
 import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
-interface SearchProps {
-    children?: React.ReactNode;
-}
+import NavSearch from './NavSearch';
 
-const Search: FC<SearchProps> = () => {
+import { classNames } from '~/utils';
+
+import styled from './index.module.scss';
+
+const cx = classNames.bind(styled);
+
+const Search: FC = () => {
     return (
-        <div>
-            <Outlet />
+        <div className={cx('wrapper-search-page')}>
+            <NavSearch />
+            <div className={cx('content')}>
+                <Outlet />
+            </div>
         </div>
     );
 };

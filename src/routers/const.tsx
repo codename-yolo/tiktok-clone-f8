@@ -7,46 +7,55 @@ import Profile from '@pages/Profile';
 import NotFound from '@pages/NotFound';
 import Search from '~/pages/Search';
 import TextLorem from '~/components/Text';
+import Videos from '~/pages/Search/components/Videos';
 
-export const privateRouters = [
+import { RouteObject } from 'react-router-dom';
+
+interface PrivateRouteObject extends RouteObject {
+    layout?: React.FC;
+    noLayout?: boolean;
+    children?: PrivateRouteObject[];
+}
+
+export const privateRouters: PrivateRouteObject[] = [
     {
         path: '/',
-        element: Home,
+        element: <Home />,
     },
     {
         path: '/home',
-        element: Home,
+        element: <Home />,
     },
     {
         path: '/following',
-        element: Following,
+        element: <Following />,
     },
     {
         path: '/upload',
-        element: Upload,
+        element: <Upload />,
         layout: UploadLayout,
     },
     {
         path: '/profile',
-        element: Profile,
+        element: <Profile />,
     },
     {
         path: '/search',
-        element: Search,
+        element: <Search />,
         children: [
             {
                 path: '',
                 element: <TextLorem />,
             },
             {
-                path: 'video',
-                element: <>live</>,
+                path: 'videos',
+                element: <Videos />,
             },
         ],
     },
     {
         path: '*',
-        element: NotFound,
+        element: <NotFound />,
         noLayout: true,
     },
 ];

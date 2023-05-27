@@ -19,13 +19,13 @@ const defaultSearchResult = [
         id: 30,
         full_name: 'acmillan',
         nickname: 'AC Milan',
-        avatar: 'https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/a8020ee50adfdef2a572f88eaa327c78~c5_300x300.webp?x-expires=1684947600&x-signature=Vp7fBOM%2BVC4%2FEr1%2FuC4lfVWsCHE%3D',
+        avatar: 'https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg',
     },
     {
         id: 31,
         full_name: 'acxuantai',
         nickname: '🍌 A.C Xuân Tài',
-        avatar: 'https://p16-sign-sg.tiktokcdn.com/tiktok-obj/1661958352349185~c5_300x300.webp?x-expires=1684947600&x-signature=Im6hiBskXjdBeFfhTIfS7babPTI%3D',
+        avatar: 'https://media.istockphoto.com/id/834741464/photo/leisure-photos.jpg?s=612x612&w=0&k=20&c=PkXsoJ_r-r2L4Ltm7vE25V2ZTGNuvj1FvBAJN3JfkaA=',
     },
 ];
 
