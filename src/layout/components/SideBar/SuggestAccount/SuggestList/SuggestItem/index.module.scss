@@ -1,0 +1,74 @@
+@import '~/GlobalStyle/_mixins.scss';
+@import '~/GlobalStyle/_global.scss';
+
+:local(.wrapper-suggest-item) {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background ease-in-out 200ms;
+    .image {
+        min-height: 36px;
+        min-width: 36px;
+        border-radius: 50%;
+        align-items: flex-start;
+        position: relative;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $pink-color-rbg;
+        .main {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            position: absolute;
+            overflow: hidden;
+            left: 2px;
+            top: 2px;
+
+            img {
+                max-width: 100%;
+                display: block;
+            }
+        }
+    }
+    .info {
+        overflow: hidden;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        margin-inline-start: 8px;
+        h4,
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        h4 {
+            flex-basis: auto;
+            font-weight: 800;
+        }
+
+        span {
+            @include color-rgba-default-layout-header(color, 0.75);
+            font-size: 12px;
+            line-height: 17px;
+        }
+    }
+    .view {
+        @include color-rgb(color);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+        line-height: 45px;
+        text-align: center;
+        margin-left: 12px;
+        min-width: 40px;
+    }
+
+    &:hover {
+        @include color-rgba-default-layout-header(background, 0.03);
+    }
+}

@@ -4,11 +4,7 @@ interface ProfileProps {
     children?: React.ReactNode;
 }
 
-const Profile: FC<ProfileProps> = (props) => {
-    const { children } = props;
-
-    console.log(children);
-
+const Profile: FC<ProfileProps> = () => {
     return <div>Profile</div>;
 };
 

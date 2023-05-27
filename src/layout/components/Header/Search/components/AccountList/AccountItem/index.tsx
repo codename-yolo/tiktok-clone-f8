@@ -4,7 +4,7 @@ import Image from '~/components/Image';
 
 import { icons } from '~/assets';
 
-import './index.scss';
+import styled from './index.module.scss';
 
 const { VerifyIcon } = icons;
 
@@ -19,11 +19,11 @@ const AccountItem: FC<AccountItemProps> = (props) => {
     const { image, name, nickName, verify } = props;
 
     return (
-        <div className="wrapper-account-item">
-            <div className="image">
+        <div className={styled['wrapper-account-item']}>
+            <div className={styled['image']}>
                 <Image src={image} alt={name} />
             </div>
-            <div className="info">
+            <div className={styled['info']}>
                 <h4>
                     {name}
                     {verify && <VerifyIcon />}

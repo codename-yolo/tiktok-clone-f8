@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import './index.scss';
+import styled from './index.module.scss';
 
 interface TippyBoxProps {
     message: string;
@@ -11,8 +11,8 @@ const TippyBox: FC<TippyBoxProps> = (props) => {
     const { message, cls } = props;
 
     return (
-        <div className={`wrapper-tippy-box ${cls}`}>
-            <span className="content">{message}</span>
+        <div className={`${styled['wrapper-tippy-box']} ${cls ? cls : ''}`}>
+            <span className={styled['content']}>{message}</span>
         </div>
     );
 };

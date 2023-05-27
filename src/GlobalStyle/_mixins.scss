@@ -5,3 +5,7 @@
 @mixin color-rgba-default-layout-header($typeProperties, $opacity) {
     #{$typeProperties}: rgba(22, 24, 35, $opacity);
 }
+
+@mixin color-rgb($typeProperties) {
+    #{$typeProperties}: rgb(22, 24, 35);
+}

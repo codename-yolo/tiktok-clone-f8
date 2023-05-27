@@ -3,7 +3,7 @@ import Tippy from '@tippyjs/react/headless';
 
 import { AttrTippyTye } from './type';
 
-import './index.scss';
+import styled from './index.module.scss';
 
 interface TippyComponentProps {
     visible?: boolean;
@@ -16,6 +16,7 @@ interface TippyComponentProps {
     children?: React.ReactElement;
     trigger?: string;
     delay?: [number | null, number | null] | number | undefined;
+    offset?: [number, number];
     onHide?: () => void;
     clsContainer?: string;
 }
@@ -26,13 +27,14 @@ const TippyComponent: FC<TippyComponentProps> = (props) => {
         trigger,
         onClickOutside,
         placement = 'bottom',
-        delay,
+        delay = [0, 700],
         width,
         containerEle,
         dataComponent,
         children,
         clsContainer,
         onHide,
+        offset = [10, 0],
         ...passProps
     } = props;
 
@@ -53,7 +55,7 @@ const TippyComponent: FC<TippyComponentProps> = (props) => {
         return (
             <div
                 tabIndex={-1}
-                className={`wrapper-tippy-common ${clsContainer}`}
+                className={`${styled['wrapper-tippy-common']} ${clsContainer}`}
                 style={{
                     width: width ? width : containerEle?.getBoundingClientRect().width,
                 }}
@@ -64,17 +66,25 @@ const TippyComponent: FC<TippyComponentProps> = (props) => {
         );
     };
 
+    /**
+     *  offset={[<ngang>, <dọc>]}
+     *  Tính từ phần từ nó tham chiếu
+     */
+
     return (
-        <Tippy
-            {...propsTrigger}
-            {...passProps}
-            interactive
-            delay={delay || [0, 700]}
-            placement={placement}
-            render={renderContainer}
-        >
-            {children}
-        </Tippy>
+        <div>
+            <Tippy
+                {...propsTrigger}
+                {...passProps}
+                offset={offset}
+                interactive
+                delay={delay}
+                placement={placement}
+                render={renderContainer}
+            >
+                {children}
+            </Tippy>
+        </div>
     );
 };
 

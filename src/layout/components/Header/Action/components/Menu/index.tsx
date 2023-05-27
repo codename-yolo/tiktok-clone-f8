@@ -7,7 +7,7 @@ import Tippy from '~/components/Tippy';
 
 import { MenuType } from './type.ts';
 
-import './index.scss';
+import styled from './index.module.scss';
 
 import { icons } from '~/assets';
 
@@ -94,14 +94,17 @@ const Menu: FC<MenuProps> = (props) => {
             trigger="mouseenter"
             width={224}
             dataComponent={
-                <Wrapper cls="wrapper-menu">
+                <Wrapper cls={styled['wrapper-menu']}>
                     {size(history) > 1 && (
                         <header>
-                            <ArrowBackIcon className="btn-back" onClick={handleBackHistory} />
-                            <span className="title">{currentMenu?.title}</span>
+                            <ArrowBackIcon
+                                className={styled['btn-back']}
+                                onClick={handleBackHistory}
+                            />
+                            <span className={styled['title']}>{currentMenu?.title}</span>
                         </header>
                     )}
-                    <div className="wrapper-render-menu">{renderMenu}</div>
+                    <div className={styled['wrapper-render-menu']}>{renderMenu}</div>
                 </Wrapper>
             }
             onHide={handleResetToFirstPage}

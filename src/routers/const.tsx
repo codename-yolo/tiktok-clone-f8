@@ -5,6 +5,8 @@ import Following from '@pages/Following';
 import Upload from '@pages/Upload';
 import Profile from '@pages/Profile';
 import NotFound from '@pages/NotFound';
+import Search from '~/pages/Search';
+import TextLorem from '~/components/Text';
 
 export const privateRouters = [
     {
@@ -27,6 +29,20 @@ export const privateRouters = [
     {
         path: '/profile',
         element: Profile,
+    },
+    {
+        path: '/search',
+        element: Search,
+        children: [
+            {
+                path: '',
+                element: <TextLorem />,
+            },
+            {
+                path: 'video',
+                element: <>live</>,
+            },
+        ],
     },
     {
         path: '*',

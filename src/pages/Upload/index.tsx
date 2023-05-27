@@ -4,11 +4,7 @@ interface UploadProps {
     children?: React.ReactNode;
 }
 
-const Upload: FC<UploadProps> = (props) => {
-    const { children } = props;
-
-    console.log(children);
-
+const Upload: FC<UploadProps> = () => {
     return <div>Upload</div>;
 };
 

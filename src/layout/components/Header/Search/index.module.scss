@@ -1,7 +1,7 @@
 @import '~/GlobalStyle/_mixins.scss';
 @import '~/GlobalStyle/_global.scss';
 
-.wrapper-search-header {
+:local(.wrapper-search-header) {
     position: relative;
     display: flex;
     align-items: center;
@@ -96,7 +96,8 @@
         }
     }
 }
-.wrapper-tippy-search-header-default-layout {
+
+:local(.wrapper-tippy-search-header-default-layout) {
     background: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
     border-radius: 8px;
@@ -121,10 +122,10 @@
     }
 }
 
-.custom-tooltip {
-    background-color: red;
-}
+// .custom-tooltip {
+//     background-color: red;
+// }
 
-.custom-tippy-search-header {
-    max-height: min((100vh - 96px) - 60px, 734px);
-}
+// .custom-tippy-search-header {
+//     max-height: min((100vh - 96px) - 60px, 734px);
+// }

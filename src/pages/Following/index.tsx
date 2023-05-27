@@ -4,11 +4,7 @@ interface FollowingProps {
     children?: React.ReactNode;
 }
 
-const Following: FC<FollowingProps> = (props) => {
-    const { children } = props;
-
-    console.log(children);
-
+const Following: FC<FollowingProps> = () => {
     return <div>Following page</div>;
 };
 
