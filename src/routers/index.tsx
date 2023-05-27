@@ -7,15 +7,10 @@ import { privateRouters } from './const';
 const Routers = () => {
     const element = useRoutes(
         privateRouters.map(
-            ({ layout: Layout = DefaultLayout, element: Element, noLayout, ...item }) => ({
+            ({ layout: Layout = DefaultLayout, element, path, noLayout, ...item }) => ({
+                path,
+                element: noLayout ? element : <Layout>{element}</Layout>,
                 ...item,
-                element: noLayout ? (
-                    <Element />
-                ) : (
-                    <Layout>
-                        <Element></Element>
-                    </Layout>
-                ),
             }),
         ),
     );

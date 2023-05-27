@@ -2,6 +2,8 @@ import React, { forwardRef, useState } from 'react';
 
 import { images } from '~/assets';
 
+import './index.scss';
+
 const { NoImage } = images;
 
 interface ImageProps {
