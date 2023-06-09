@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import NavSearch from './NavSearch';
@@ -14,7 +14,9 @@ const Search: FC = () => {
         <div className={cx('wrapper-search-page')}>
             <NavSearch />
             <div className={cx('content')}>
-                <Outlet />
+                <Suspense fallback={<div style={{ background: 'red' }}>Loading...</div>}>
+                    <Outlet />
+                </Suspense>
             </div>
         </div>
     );

@@ -38,18 +38,9 @@ const TippyComponent: FC<TippyComponentProps> = (props) => {
         ...passProps
     } = props;
 
-    const propsTrigger = {
-        ...(trigger
-            ? {
-                  trigger,
-                  hideOnClick: false,
-                  onHide,
-              }
-            : {
-                  visible,
-                  onClickOutside,
-              }),
-    };
+    const propsTrigger = trigger
+        ? { trigger, hideOnClick: false, onHide }
+        : { visible, onClickOutside };
 
     const renderContainer = (attrs: AttrTippyTye) => {
         return (
